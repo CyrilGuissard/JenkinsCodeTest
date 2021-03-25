@@ -3,13 +3,14 @@ pipeline {
 	stages {
 		stage ("Git") {
 			steps {
-				git branch: "main",
-				url: "https://github.com/CyrilGuissard/JenkinsCodeTest.git"
+				git branch: 'main',
+				credentialsld: JenkinsSSH',
+				url: 'https://github.com/CyrilGuissard/JenkinsCodeTest.git'
 			}
 		}
 		stage ("Bandit Test") {
 			steps {
-				sh "bandit -r $PWD > ~/JenkinsCodeTest/reports/factorial.txt"
+				sh 'bandit -r $PWD > ~/JenkinsCodeTest/reports/factorial.txt'
 			}
 		}
 	}
