@@ -1,0 +1,16 @@
+pipeline {
+	agent master
+	stages {
+		stage ("Git") {
+			steps {
+				git branch: "main",
+				url: "https://github.com/CyrilGuissard/JenkinsCodeTest.git"
+			}
+		}
+		stage ("Bandit Test") {
+			steps {
+				sh "bandit -r $PWD > $WORKSPACE/reports/test.txt"
+			}
+		}
+	}
+}
