@@ -9,7 +9,7 @@ pipeline {
 		}
 		stage ("Bandit Test") {
 			steps {
-				sh "bandit -r $PWD > $WORKSPACE/reports/test.txt"
+				sh "bandit -r $PWD > ~/JenkinsCodeTest/reports/factorial.txt"
 			}
 		}
 	}
