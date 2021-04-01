@@ -15,7 +15,7 @@ pipeline {
 		}
 		stage ("Slscan Test") {
 			steps {
-				sh 'docker run --rm -e "WORKSPACE=${PWD}" -v "$PWD:/app" shiftleft/sast-scan scan --src /app --type python'
+				sh 'sudo docker run --rm -e "WORKSPACE=${PWD}" -v "$PWD:/app" shiftleft/sast-scan scan --src /app --type python'
 			}
 		}
 	}
