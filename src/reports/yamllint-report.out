@@ -1,0 +1,2 @@
+/app/playbook.yaml:1:1: [warning] missing document start "---" (document-start)
+/app/playbook.yaml:9:1: [error] syntax error: could not find expected ':' (syntax)
